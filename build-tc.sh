@@ -21,7 +21,7 @@ msg "Building LLVM..."
 	--projects "clang;lld;polly" \
 	--targets "ARM;AArch64;X86" \
 	--install-folder "installTmp" \
-	--clang-vendor "Kyuofox-ClangBuiltLinux-Clang-$(date +%Y%m%d)" \
+	--clang-vendor "Kyuofox-$(date +%Y%m%d)" \
 	--additional-build-arguments "CLANG_REPOSITORY_STRING=GitHub.com/KyuoFoxHuyu"
 
 # Build binutils

@@ -56,14 +56,14 @@ jobs:
         mv tc-build/install ./Clang_Out/clang-$(date +%Y%m%d)
         cd Clang_Out
         touch VERSION
-        echo "Kyuofox-ClangBuiltLinux-Clang-$(date +%Y%m%d)" >> VERSION
+        echo "Kyuofox-$(date +%Y%m%d)" >> VERSION
         mv VERSION ./clang-$(date +%Y%m%d)/
-        tar -cvf --zstd Kyuofox-ClangBuiltLinux-Clang-$(date +%Y%m%d).tar.zst clang-$(date +%Y%m%d)/*
+        tar -cvf --zstd Kyuofox-Clang-$(date +%Y%m%d).tar.zst clang-$(date +%Y%m%d)/*
                
     - name: Upload Clang
       uses: actions/upload-artifact@main
       with:
-        name: Kyuofox-ClangBuiltLinux-Clang
+        name: Kyuofox-Clang
         path: Clang_Out/*.tar.zst 
 
     - name: Generate Tag & Release Name
@@ -71,7 +71,7 @@ jobs:
       run: |
         time=$(date +%Y%m%d%H%M)
         release_tag="$time"
-        release_name="Kyuofox-ClangBuiltLinux-Clang-$(date +%Y%m%d)"
+        release_name="Kyuofox-Clang-$(date +%Y%m%d)"
         echo "##[set-output name=release_name;]$release_name"
         echo "##[set-output name=release_tag;]$release_tag"        
 

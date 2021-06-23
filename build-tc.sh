@@ -12,9 +12,6 @@ rm -rf installTmp
 # Build LLVM
 msg "Building LLVM..."
 ./build-llvm.py \
-	--update \
-	--update-llvm \
-	--update-binutils \
     --full-toolchain \
     --lto "thin" \
     --pgo "llvm" \
